@@ -9,6 +9,7 @@ function App() {
   const [connection, setConnection] = useState('');
   const [messages, setMessages] = useState([]);
   const [user, setUser] = useState("");
+  const [users, setUsers] = useState([]);
 
   const joinRoom = async (user, room) => {
     setUser(user);
@@ -20,6 +21,11 @@ function App() {
 
       connection.on("ReceiveMessage", (user, message) => {
         setMessages(messages => [...messages, {user, message}]);
+      })
+
+      connection.on("UsersInRoom", users => {
+        console.log("users", users);
+        setUsers(users);
       })
 
       await connection.start();
@@ -42,7 +48,7 @@ function App() {
     <div className="app">
       {!connection
         ? <Lobby joinRoom={joinRoom} />
-        : <Chat user={user} messages={messages} sendMessage={sendMessage}/>
+        : <Chat user={user} users={users} messages={messages} sendMessage={sendMessage}/>
       }
     </div>
   );

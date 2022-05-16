@@ -6,10 +6,6 @@ h2 {
   color: #313131;
 }
 
-h6 {
-  color: greenyellow;
-}
-
 hr.line {
   border: 1px solid #313131;
   width: 175px;
@@ -36,12 +32,19 @@ hr.line {
 }
 
 .user-list {
-  float: left;
+  float: right;
   background-color: #313131;
   color: white;
   width: 200px;
-  height: 440px;
+  height: 82vh;
   margin-right: 4px;
+  overflow: auto;
+}
+
+@media (pointer:coarse) {
+  .user-list {
+    display: none;
+  }
 }
 
 .message-container {
