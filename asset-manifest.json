@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/huy27/ChatApplication/static/css/main.667d8eb9.css",
+    "main.js": "/huy27/ChatApplication/static/js/main.ff724be7.js",
+    "static/js/787.ee12053c.chunk.js": "/huy27/ChatApplication/static/js/787.ee12053c.chunk.js",
+    "index.html": "/huy27/ChatApplication/index.html",
+    "main.667d8eb9.css.map": "/huy27/ChatApplication/static/css/main.667d8eb9.css.map",
+    "main.ff724be7.js.map": "/huy27/ChatApplication/static/js/main.ff724be7.js.map",
+    "787.ee12053c.chunk.js.map": "/huy27/ChatApplication/static/js/787.ee12053c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.667d8eb9.css",
+    "static/js/main.ff724be7.js"
+  ]
+}
