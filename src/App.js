@@ -15,7 +15,7 @@ function App() {
     setUser(user);
     try {
       const connection = new HubConnectionBuilder()
-        .withUrl("https://803c-116-102-20-249.ngrok.io/chat")
+        .withUrl("http://chat-server-huy.somee.com/chat")
         .configureLogging(LogLevel.Information)
         .build();
 
