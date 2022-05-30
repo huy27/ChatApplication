@@ -1,7 +1,7 @@
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Lobby from './components/Lobby';
-import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+import { HubConnectionBuilder, LogLevel, HttpTransportType } from '@microsoft/signalr';
 import { useState } from 'react';
 import Chat from './components/Chat';
 
@@ -15,12 +15,12 @@ function App() {
     setUser(user);
     try {
       const connection = new HubConnectionBuilder()
-        .withUrl("http://chat-server-huy.somee.com/chat")
+        .withUrl("https://chat-server-huy.somee.com/chat")
         .configureLogging(LogLevel.Information)
         .build();
 
       connection.on("ReceiveMessage", (user, message) => {
-        setMessages(messages => [...messages, {user, message}]);
+        setMessages(messages => [...messages, { user, message }]);
       })
 
       connection.on("UsersInRoom", users => {
@@ -48,7 +48,7 @@ function App() {
     <div className="app">
       {!connection
         ? <Lobby joinRoom={joinRoom} />
-        : <Chat user={user} users={users} messages={messages} sendMessage={sendMessage}/>
+        : <Chat user={user} users={users} messages={messages} sendMessage={sendMessage} />
       }
     </div>
   );
